@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <h1>Login Page</h1>
+    <div id="login">
+      <input type="text" id="username" placeholder="User Name" />
+      <input type="password" id="password" placeholder="Your Password" />
+      <button id="submit">Login</button>
+    </div>
+  </body>
+</html>
+
+
+
+<script type="module">
+  // alert('Sign Up First')
+  import navbar from "./component/navbar.js";
+  document.getElementById("navbar").innerHTML = navbar();
+
+  const login = async () => {
+    let user_data = {
+      username: document.getElementById("username").value,
+      password: document.getElementById("password").value,
+    };
+    user_data = JSON.stringify(user_data);
+
+    let res = await fetch("https://masai-api-mocker.herokuapp.com/auth/login", {
+      method: "POST",
+      body: user_data, //sending the data to server in json form
+      mode: "no-cors",
+
+      headers: {
+        "Content-type": "application/json",
+      },
+    });
+
+    let data = await res.json();
+
+    let username = getElementById('username').value;
+    getUserDetails(username, data.token);                            //since data is coming here we will passing the function  here
+
+    console.log("data:", data);
+  };
+
+  document.getElementById("submit").addEventListener("click", login);
+
+  //Profile Section
+
+  let getUserDetails = async (username, token) => {
+    console.log("working here");
+
+    let res = await fetch(
+      `https://masai-api-mocker.herokuapp.com/user/${username}`,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    );
+
+    let data = await res.json();
+    console.log("data:", data);
+  };
+</script>

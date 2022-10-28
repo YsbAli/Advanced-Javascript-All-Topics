@@ -1,0 +1,8 @@
+# TOPICS :-
+# 1. var let const 
+# 2. arrow function
+# 3. for of loop
+# 4. destructuring (array and object)
+# 5. Spread and rest operator
+# 6. defauld parameters
+# 7.

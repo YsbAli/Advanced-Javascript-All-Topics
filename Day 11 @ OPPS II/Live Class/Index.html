@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- <h1>Application On Opps </h1> -->
+    <hr>
+    <h1>-:  Language Translator App :-</h1>
+<hr>
+
+    <div id="container">
+        <div oninput="Debounce(main,300)"  id="input">
+            <select name="input_language" id="input_language">
+                <option value="en">English</option>
+                <option value="hi">Hindi</option> 
+                <!-- <option value="ba">Bangla</option> -->
+            </select>
+            <button onclick="Translate()">Translate</button>
+            <textarea name="input_text" id="input_text"></textarea>
+        </div>
+        <div id="output">
+           
+            <select name="output_language" id="output_language">
+                <option value="hi">Hindi</option>
+                <option value="en">English</option>
+                <!-- <option value="ba">Bangla</option> -->
+            </select>
+            <h5 id="output-data"></h5>
+        </div>
+        
+    </div>
+
+</body>
+</html>
+<script src="Live.js"></script>

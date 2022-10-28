@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Asynchronous Programimg</title>
+  </head>
+  <body>
+
+    <!-- Counter Timer Starts -->
+
+    <!-- <h1>Asynchronous Programimg</h1>
+    <h1 id="timer"></h1>
+    <button onclick="Stop()">Stop</button> -->
+
+    <!-- Counter Timer Ends -->
+
+  <!-- Slideshow Starts  -->
+  
+  <input type="url" name="" id="url">
+  <button onclick="storeImages()">Submit Images</button>
+
+
+
+
+
+
+  </body>
+</html>
+<!-- <script src="Preclass.js"></script> -->
+<!-- <script src="Live.js"></script> -->
+
+<script>
+  // Timer Counter:-
+
+  // let h1 = document.getElementById("timer");
+  // let i = 0;
+  // let id = setInterval(function () {
+  //   //   if(i===60){
+  //   //     i=0;
+  //   //   }  // it will restart from 0 when i will 60
+
+  //   h1.innerText = i;
+  //   i++;
+  // }, 100);
+
+  // function Stop() {
+  //   clearInterval(id);
+  // }
+
+  //  Counter Timer Ends here-------------
+
+
+
+
+  // Create own Slideshow:-
+
+  function storeImages() {
+    let image = document.getElementById("url").value;
+    let images = JSON.parse(localStorage.getItem("images")) || [];
+
+    images.push(image);
+
+    localStorage.setItem("images", JSON.stringify(images));
+    document.getElementById("url").value = null;
+
+  }
+
+
+</script>

@@ -1,0 +1,21 @@
+body {
+  background-color: rgb(235, 117, 117);
+}
+
+#container {
+  display: flex;
+  border: 1px solid rgb(28, 28, 28);
+}
+#input,
+#output {
+  flex: 1;
+  margin: 5%;
+  height: 300px;
+  border: 1px solid rgb(42, 41, 41);
+  background: rgba(236, 192, 0, 0.292);
+}
+
+#input_text{
+    width: 90%;
+    height: 250px;
+}

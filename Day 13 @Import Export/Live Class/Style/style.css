@@ -1,0 +1,21 @@
+#left-navbar{
+    /* width: 100%; */
+    display: flex;
+    justify-content: space-between;
+    border: 3px solid darkblue;
+}
+
+#rigth-nav{
+    display: flex;
+    gap: 15px;
+}
+
+#Jwel_container,#el-product{
+  display: grid;
+  grid-template-columns: repeat(4,25%);
+  border: 1px solid red;
+}
+img{
+    width: 200px;
+    height: 100px;
+}

@@ -1,0 +1,16 @@
+{
+    "posts" : [
+        {"id" : 1,
+        "Message" : "Hello",
+        "Name" : "Yousub",
+        "Batch" : "PT Web 10"
+        }
+
+    ],
+
+    "create" : [{"id" : 2, "Name" : "Ishan"}
+]
+}
+
+
+

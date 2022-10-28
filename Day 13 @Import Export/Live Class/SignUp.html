@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <h1>Hey! Welcome Dear. Please Sign Up</h1>
+
+    <form>
+      <input type="text" id="name" placeholder="Name" />
+      <input type="text" id="email" placeholder="Email" />
+      <input type="password" id="password" placeholder="Password" />
+      <input type="text" id="username" placeholder="User Name" />
+      <input type="number" id="mobile" placeholder="Mobile" />
+      <input type="test" id="description" placeholder="Description" />
+      <button id="submit">Submit</button>
+      <!-- <button onclick="Register(event)">Submit</button>              if we write onclick or any other addEventListener inside module it will not work, so we can't write here like this -->
+      <!-- <input onclick="Register(event)" type="submit"> -->
+    </form>
+  </body>
+</html>
+
+
+
+
+
+
+<script type="module">
+  // inside module we can't add html event listener,it will not show the data
+  import navbar from "./component/navbar.js";
+  document.getElementById("navbar").innerHTML = navbar();
+
+  const register = async (e) => {
+    e.preventDefault(); // it will not reload the page
+
+    // now we have to send the form data to server  -- to do that we will use object Data Structure......we can use form name.value also
+
+    let form_data = {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      password: document.getElementById("password").value,
+      username: document.getElementById("username").value,
+      mobile: document.getElementById("mobile").value,
+      description: document.getElementById("description").value,
+    };
+    // console.log('form_data:', form_data)
+ 
+    form_data = JSON.stringify(form_data);                                                    //form_data will send the data to server in JSON form so we need to write like this, JSON.stringify
+
+    let res = await fetch(`https://masai-api-mocker.herokuapp.com/auth/register`, {
+      method: "POST",
+      body: form_data,                                                                        //sending the data to server in json form
+       mode :'no-cors',                                                   // for cors error
+      headers: {
+        "Content-type": "application/json",
+      },
+     }
+    );
+     
+     let respones_data = await res.json()
+     console.log('respones_data:', respones_data)
+
+  };
+
+  document.getElementById("submit").addEventListener("click", register);
+</script>

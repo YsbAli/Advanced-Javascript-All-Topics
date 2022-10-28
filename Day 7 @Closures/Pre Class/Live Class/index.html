@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+*{
+    background-color: rgb(234, 234, 138);
+}
+    #query{
+        width: 200px;
+    }
+    #movies{
+        border: solid 2px black;
+        height: 200px;
+        width: 204px;
+        border-top: none;
+        overflow: scroll; 
+    }
+</style>
+<body>
+    <h1>Hoststar Search Bar</h1>
+    <input oninput="Debounce(Main,1000)" type="text" name="" placeholder="Type Here" id="query">
+    <div id="movies"></div>
+    <!-- <button>Show Data</button> -->
+</body>
+</html>
+<script src="live.js"></script>
+<!-- <script src="pracrice.js"></script> -->

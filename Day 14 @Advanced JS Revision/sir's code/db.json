@@ -1,0 +1,9 @@
+{
+    "posts" : [
+        {
+            "id1" : 1,"message":"Hello",
+            "id2" : 1,"message":"Hello",
+            "id3" : 1,"message":"Hello"
+        }
+    ]
+}

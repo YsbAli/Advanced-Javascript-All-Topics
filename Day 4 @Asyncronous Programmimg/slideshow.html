@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>slideshow</title>
+  </head>
+  <body>
+    <button onclick="start()">Start Slideshow</button>
+
+    <button onclick="stop()">Stop Slideshow</button>
+
+    <div id="imgs"></div>
+  </body>
+</html>
+
+<script>
+
+let images_div = document.getElementById("imgs");
+let i = 0;
+let id; // global varibale
+
+  function start() {
+    //let i = 0 // it will start from 0
+    let images_arr = JSON.parse(localStorage.getItem("images"));
+
+    let img = document.createElement("img");
+
+    // img.src = 'x'
+
+    id =  setInterval(() => {
+      // console.log(images_arr[i])
+      // if(i === 3){
+      //     i = 0;
+      // }
+      if (i === images_arr.length) {
+        i = 0;
+      }
+    
+      images_div.innerHTML = null;
+
+      img.src = images_arr[i];
+
+      images_div.append(img);
+
+      i++;
+    // }, 2); it will create a slideshow game
+    }, 2000);
+}
+
+  function start() {
+    clearInterval(id)
+  }
+</script>
